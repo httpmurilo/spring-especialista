@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Sistema de vendas Ambiente de Dev
+
+server:
+  servlet:
+    context-path: /sistemas-vendas
+  port: 8081

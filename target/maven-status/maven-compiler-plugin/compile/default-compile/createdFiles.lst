@@ -1,1 +1,5 @@
+io/murilo/vendas/repository/ClienteRepository.class
 io/murilo/vendas/VendasApplication.class
+io/murilo/vendas/service/ClienteService.class
+io/murilo/vendas/model/Cliente.class
+io/murilo/vendas/config/AppConfiguration.class

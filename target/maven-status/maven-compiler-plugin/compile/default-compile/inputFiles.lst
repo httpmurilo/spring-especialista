@@ -1,1 +1,5 @@
 /home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/VendasApplication.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/service/ClienteService.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/model/Cliente.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/ClienteRepository.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/config/AppConfiguration.java
