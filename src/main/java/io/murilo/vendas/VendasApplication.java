@@ -20,16 +20,6 @@ public class VendasApplication {
         return args -> {
             Cliente cliente = new Cliente("Murilo");
             clienteRepository.salvar(cliente);
-
-            Cliente cliente2 = new Cliente("Murilo Eduardo");
-            clienteRepository.salvar(cliente2);
-
-            List<Cliente> clienteList = new ArrayList<>();
-            clienteList = clienteRepository.obterTodos();
-            clienteList.forEach(cliente1 -> {
-                System.out.println(cliente1.getId());
-                System.out.println(cliente1.getNome());
-            });
         };
     }
 
