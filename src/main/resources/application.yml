@@ -6,4 +6,4 @@ server:
     context-path: /sistema-vendas
 spring:
   profiles:
-    active: production
+    active: dev
