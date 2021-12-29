@@ -1,41 +1,22 @@
 package io.murilo.vendas.repository;
 
 import io.murilo.vendas.domain.entity.Cliente;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
-public class ClienteRepository {
+public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
 
-    @Autowired
-    private EntityManager entityManager;
+    List<Cliente> findByNome(@Param("nome") String nome);
 
-    @Transactional
-    public Cliente salvar(Cliente cliente){
-        entityManager.persist(cliente);
-        return cliente;
-    }
+    boolean existsByNome(String nome);
 
-    @Transactional(readOnly = true)
-    public List<Cliente> obterTodos() {
-        return entityManager.createQuery("from Cliente", Cliente.class).getResultList();
-    }
-
-    @Transactional
-    public Cliente atualizar(Cliente cliente) {
-        entityManager.merge(cliente);
-        return cliente;
-    }
-
-    @Transactional
-    public void deletar(Cliente cliente) {
-        if (!entityManager.contains(cliente)){
-            cliente = entityManager.merge(cliente);
-        }
-        entityManager.remove(cliente);
-    }
+    @Query("delete from Cliente c where c.nome =:nome ")
+    @Modifying
+    void deleteByNome(String nome);
 }

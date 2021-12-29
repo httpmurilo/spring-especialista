@@ -1,6 +1,7 @@
 package io.murilo.vendas.domain.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table
@@ -10,6 +11,14 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
+
+    @OneToMany(mappedBy = "cliente")
+    //um cliente pode ter muitos pedidos
+    private Set<Pedido> pedidos;
+
+    public Set<Pedido> getPedidos() {
+        return pedidos;
+    }
 
     public Cliente(Integer id, String nome) {
         this.id = id;

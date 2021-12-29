@@ -1,11 +1,28 @@
 package io.murilo.vendas.domain.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
+
+@Entity
+@Table
 public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    //mapeamento
+    //muitos pedidos para um cliente
+    //Many minha entidade atual
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
+
+    @Column(name = "data_pedido")
     private LocalDate dataPedido;
 
     public Integer getId() {
@@ -40,6 +57,18 @@ public class Pedido {
         this.total = total;
     }
 
+    @Column(name = "total", length = 20, precision = 2)
     private BigDecimal total;
+
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
+
+    @OneToMany(mappedBy = "pedido")
+    private List<ItemPedido> itens;
 
 }
