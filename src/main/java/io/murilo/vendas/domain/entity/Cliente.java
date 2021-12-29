@@ -12,7 +12,7 @@ public class Cliente {
     private Integer id;
     private String nome;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
     //um cliente pode ter muitos pedidos
     private Set<Pedido> pedidos;
 

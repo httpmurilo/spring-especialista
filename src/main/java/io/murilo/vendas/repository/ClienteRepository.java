@@ -5,11 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
 
     List<Cliente> findByNome(@Param("nome") String nome);
@@ -19,4 +17,10 @@ public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
     @Query("delete from Cliente c where c.nome =:nome ")
     @Modifying
     void deleteByNome(String nome);
+
+    //CarregarClienteComPedidos
+    @Query("select c from Cliente c left join fetch c.pedidos p where c.id =:id ")
+    Cliente findClienteFetchPedidos(Integer clienteId);
+
+
 }
