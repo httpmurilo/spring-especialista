@@ -1,5 +1,10 @@
 /home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/VendasApplication.java
-/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/service/ClienteService.java
-/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/model/Cliente.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/ItensPedidoRepository.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/domain/entity/ItemPedido.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/domain/entity/Pedido.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/domain/entity/Produto.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/domain/entity/Cliente.java
 /home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/ClienteRepository.java
-/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/config/AppConfiguration.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/controller/ClienteController.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/PedidoRepository.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/ProdutoRepository.java

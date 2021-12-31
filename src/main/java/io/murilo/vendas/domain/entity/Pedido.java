@@ -57,7 +57,7 @@ public class Pedido {
         this.total = total;
     }
 
-    @Column(name = "total", scale = 20, precision = 2)
+    @Column(name = "total", precision = 20, scale = 2)
     private BigDecimal total;
 
     public List<ItemPedido> getItens() {

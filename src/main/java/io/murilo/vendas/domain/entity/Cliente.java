@@ -1,5 +1,7 @@
 package io.murilo.vendas.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -12,6 +14,7 @@ public class Cliente {
     private Integer id;
     private String nome;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
     //um cliente pode ter muitos pedidos
     private Set<Pedido> pedidos;

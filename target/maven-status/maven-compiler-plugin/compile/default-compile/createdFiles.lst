@@ -1,5 +1,10 @@
+io/murilo/vendas/controller/ClienteController.class
+io/murilo/vendas/domain/entity/ItemPedido.class
+io/murilo/vendas/repository/ProdutoRepository.class
 io/murilo/vendas/repository/ClienteRepository.class
 io/murilo/vendas/VendasApplication.class
-io/murilo/vendas/service/ClienteService.class
-io/murilo/vendas/model/Cliente.class
-io/murilo/vendas/config/AppConfiguration.class
+io/murilo/vendas/domain/entity/Pedido.class
+io/murilo/vendas/repository/PedidoRepository.class
+io/murilo/vendas/repository/ItensPedidoRepository.class
+io/murilo/vendas/domain/entity/Produto.class
+io/murilo/vendas/domain/entity/Cliente.class
