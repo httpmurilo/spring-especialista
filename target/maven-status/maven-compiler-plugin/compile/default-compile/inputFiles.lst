@@ -8,3 +8,4 @@
 /home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/controller/ClienteController.java
 /home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/PedidoRepository.java
 /home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/repository/ProdutoRepository.java
+/home/murilomelo/estudo/api/src/main/java/io/murilo/vendas/exceptions/BadRequestException.java
