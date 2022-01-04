@@ -3,6 +3,7 @@ package io.murilo.vendas.domain.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -61,7 +62,10 @@ public class Pedido {
     private BigDecimal total;
 
     public List<ItemPedido> getItens() {
-        return itens;
+        if(this.itens == null){
+            this.itens = new ArrayList<>();
+        }
+        return this.itens;
     }
 
     public void setItens(List<ItemPedido> itens) {
