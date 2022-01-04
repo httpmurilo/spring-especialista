@@ -1,15 +1,86 @@
 package io.murilo.vendas.services.Impl;
 
+import io.murilo.vendas.Dto.ItemPedidoDTO;
+import io.murilo.vendas.Dto.PedidoDTO;
+import io.murilo.vendas.domain.entity.Cliente;
+import io.murilo.vendas.domain.entity.ItemPedido;
+import io.murilo.vendas.domain.entity.Pedido;
+import io.murilo.vendas.domain.entity.Produto;
+import io.murilo.vendas.exceptions.ClienteException;
+import io.murilo.vendas.exceptions.PedidoException;
+import io.murilo.vendas.exceptions.ProdutoException;
+import io.murilo.vendas.repository.ClienteRepository;
+import io.murilo.vendas.repository.ItensPedidoRepository;
 import io.murilo.vendas.repository.PedidoRepository;
+import io.murilo.vendas.repository.ProdutoRepository;
 import io.murilo.vendas.services.PedidoService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PedidoServiceImpl implements PedidoService {
 
-    public PedidoServiceImpl(PedidoRepository repository) {
+    public PedidoServiceImpl(PedidoRepository repository, ClienteRepository clienteRepository, ProdutoRepository produtoRepository,
+                             ItensPedidoRepository itensPedidoRepository) {
         this.repository = repository;
+        this.clienteRepository = clienteRepository;
+        this.produtoRepository = produtoRepository;
+        this.itensPedidoRepository = itensPedidoRepository;
+
     }
 
-    private PedidoRepository repository;
+    protected PedidoRepository repository;
+    protected ClienteRepository clienteRepository;
+    protected ProdutoRepository produtoRepository;
+    protected ItensPedidoRepository itensPedidoRepository;
+
+    @Override
+    @Transactional
+    public Pedido salvar(PedidoDTO dto) {
+
+        Integer idCliente = dto.getCliente();
+        Cliente cliente = clienteRepository.findById(idCliente)
+                .orElseThrow(() -> new ClienteException("Cliente não encontrado"));
+
+        Pedido pedido = new Pedido();
+        pedido.setTotal(dto.getTotal());
+        pedido.setDataPedido(LocalDate.now());
+
+        pedido.setCliente(cliente);
+
+        List<ItemPedido> itemPedidos = converterItems(pedido, dto.getItems());
+        repository.save(pedido);
+        itensPedidoRepository.saveAll(itemPedidos);
+
+        pedido.setItens(itemPedidos);
+
+        return pedido;
+    }
+
+    private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items) {
+        if(items.isEmpty()) {
+            throw new PedidoException("Não é possivel realizar um pedido sem itens!!");
+        }
+
+        return items.stream()
+                .map(dto -> {
+
+                    Integer idProduto = dto.getProduto();
+
+                    Produto produto = produtoRepository.findById(idProduto).orElseThrow(() -> new ProdutoException("Produto invalido"));
+
+                    ItemPedido itemPedido = new ItemPedido();
+                    itemPedido.setQuantidade(dto.getQuantidade());
+                    itemPedido.setPedido(pedido);
+                    itemPedido.setProduto(produto);
+
+                   return itemPedido;
+                }).collect(Collectors.toList());
+
+    }
 }

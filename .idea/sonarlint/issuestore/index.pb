@@ -15,5 +15,3 @@ p
 @src/main/java/io/murilo/vendas/repository/ProdutoRepository.java,4/9/494e8a3a49f1220d329e3017423e8254ef0d481c
 i
 9src/main/java/io/murilo/vendas/domain/entity/Produto.java,0/c/0c1d3cb20dee960337f1390e270a47a4c8aaaa8a
-h
-8src/main/java/io/murilo/vendas/domain/entity/Pedido.java,f/6/f663492936f256dc0b6d6810e583a416ecee7031
