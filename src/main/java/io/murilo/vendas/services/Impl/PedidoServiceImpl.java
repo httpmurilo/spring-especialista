@@ -6,9 +6,7 @@ import io.murilo.vendas.domain.entity.Cliente;
 import io.murilo.vendas.domain.entity.ItemPedido;
 import io.murilo.vendas.domain.entity.Pedido;
 import io.murilo.vendas.domain.entity.Produto;
-import io.murilo.vendas.exceptions.ClienteException;
-import io.murilo.vendas.exceptions.PedidoException;
-import io.murilo.vendas.exceptions.ProdutoException;
+import io.murilo.vendas.exceptions.GenericExceptionError;
 import io.murilo.vendas.repository.ClienteRepository;
 import io.murilo.vendas.repository.ItensPedidoRepository;
 import io.murilo.vendas.repository.PedidoRepository;
@@ -19,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,7 +42,7 @@ public class PedidoServiceImpl implements PedidoService {
 
         Integer idCliente = dto.getCliente();
         Cliente cliente = clienteRepository.findById(idCliente)
-                .orElseThrow(() -> new ClienteException("Cliente não encontrado"));
+                .orElseThrow(() -> new GenericExceptionError("Cliente não encontrado"));
 
         Pedido pedido = new Pedido();
         pedido.setTotal(dto.getTotal());
@@ -64,7 +61,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items) {
         if(items.isEmpty()) {
-            throw new PedidoException("Não é possivel realizar um pedido sem itens!!");
+            throw new GenericExceptionError("Não é possivel realizar um pedido sem itens!!");
         }
 
         return items.stream()
@@ -72,7 +69,7 @@ public class PedidoServiceImpl implements PedidoService {
 
                     Integer idProduto = dto.getProduto();
 
-                    Produto produto = produtoRepository.findById(idProduto).orElseThrow(() -> new ProdutoException("Produto invalido"));
+                    Produto produto = produtoRepository.findById(idProduto).orElseThrow(() -> new GenericExceptionError("Produto invalido"));
 
                     ItemPedido itemPedido = new ItemPedido();
                     itemPedido.setQuantidade(dto.getQuantidade());
