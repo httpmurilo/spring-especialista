@@ -9,8 +9,6 @@ Dsrc/main/java/io/murilo/vendas/repository/ItensPedidoRepository.java,4/9/49f81
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 l
 <src/main/java/io/murilo/vendas/domain/entity/ItemPedido.java,c/8/c8a5039c61c38257b5f3cff61206b2599f2e8f0f
-o
-?src/main/java/io/murilo/vendas/repository/PedidoRepository.java,5/7/5758bf70ddceffeef764f2874bb033b0dcb127e9
 p
 @src/main/java/io/murilo/vendas/repository/ProdutoRepository.java,4/9/494e8a3a49f1220d329e3017423e8254ef0d481c
 i
