@@ -2,10 +2,7 @@ package io.murilo.vendas.services.Impl;
 
 import io.murilo.vendas.Dto.ItemPedidoDTO;
 import io.murilo.vendas.Dto.PedidoDTO;
-import io.murilo.vendas.domain.entity.Cliente;
-import io.murilo.vendas.domain.entity.ItemPedido;
-import io.murilo.vendas.domain.entity.Pedido;
-import io.murilo.vendas.domain.entity.Produto;
+import io.murilo.vendas.domain.entity.*;
 import io.murilo.vendas.exceptions.GenericExceptionError;
 import io.murilo.vendas.repository.ClienteRepository;
 import io.murilo.vendas.repository.ItensPedidoRepository;
@@ -48,6 +45,7 @@ public class PedidoServiceImpl implements PedidoService {
         Pedido pedido = new Pedido();
         pedido.setTotal(dto.getTotal());
         pedido.setDataPedido(LocalDate.now());
+        pedido.setStatus(StatusPedido.REALIZADO);
 
         pedido.setCliente(cliente);
 

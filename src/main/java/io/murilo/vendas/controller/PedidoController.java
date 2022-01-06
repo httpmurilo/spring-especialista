@@ -35,13 +35,13 @@ public class PedidoController {
     @GetMapping("/{id}")
     public InformacoesPedidoDTO getById(Integer id) {
         return service.obterPedidoCompleto(id)
-                .map(this::converter
-                ).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Pedido não encontrado"));
+                .map(this::converter)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Pedido não encontrado"));
     }
 
     private InformacoesPedidoDTO converter(Pedido pedido) {
         return new InformacoesPedidoDTO(pedido.getId(), pedido.getCliente().getCpf(),
-                pedido.getCliente().getNome(), pedido.getTotal(),converter(pedido.getItens()));
+                pedido.getCliente().getNome(), pedido.getTotal(),converter(pedido.getItens()), pedido.getStatus().name());
     }
 
     private List<InformacaoItemPedidoDTO> converter(List<ItemPedido> itens) {
