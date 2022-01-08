@@ -1,10 +1,12 @@
 package io.murilo.vendas.controller;
 
+import io.murilo.vendas.Dto.AtualizarStatusPedidoDTO;
 import io.murilo.vendas.Dto.InformacaoItemPedidoDTO;
 import io.murilo.vendas.Dto.InformacoesPedidoDTO;
 import io.murilo.vendas.Dto.PedidoDTO;
 import io.murilo.vendas.domain.entity.ItemPedido;
 import io.murilo.vendas.domain.entity.Pedido;
+import io.murilo.vendas.domain.entity.StatusPedido;
 import io.murilo.vendas.services.PedidoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.CollectionUtils;
@@ -52,5 +54,12 @@ public class PedidoController {
         return itens.stream()
                 .map(item ->
                         new InformacaoItemPedidoDTO(item.getProduto().getDescricao(),item.getProduto().getPreco(),item.getQuantidade())).collect(Collectors.toList());
+    }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateStatus(@PathVariable Integer id, @RequestBody AtualizarStatusPedidoDTO dto) {
+        String novoStatus = dto.getNovoStatus();
+        service.atualizaStatus(id, StatusPedido.valueOf(novoStatus));
     }
 }

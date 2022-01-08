@@ -63,6 +63,16 @@ public class PedidoServiceImpl implements PedidoService {
         return repository.findByIdFetchItens(id);
     }
 
+    @Override
+    @Transactional
+    public void atualizaStatus(Integer id, StatusPedido statusPedido) {
+        repository.findById(id)
+                .map(pedido -> {
+                    pedido.setStatus(statusPedido);
+                    return repository.save(pedido);
+                }).orElseThrow(() -> new GenericExceptionError("Erro ao atualizar o status do pedido"));
+    }
+
     private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items) {
         if(items.isEmpty()) {
             throw new GenericExceptionError("Não é possivel realizar um pedido sem itens!!");

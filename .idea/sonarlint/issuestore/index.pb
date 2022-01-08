@@ -13,3 +13,5 @@ p
 @src/main/java/io/murilo/vendas/repository/ProdutoRepository.java,4/9/494e8a3a49f1220d329e3017423e8254ef0d481c
 i
 9src/main/java/io/murilo/vendas/domain/entity/Produto.java,0/c/0c1d3cb20dee960337f1390e270a47a4c8aaaa8a
+o
+?src/main/java/io/murilo/vendas/Dto/InformacaoItemPedidoDTO.java,4/6/46cfc6737b705cf43409e5e71aca2d1aa7ffca52
