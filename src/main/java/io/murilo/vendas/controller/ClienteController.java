@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 import static org.springframework.http.HttpStatus.*;
 
@@ -26,7 +27,7 @@ public class ClienteController {
     }
     @PostMapping("/")
     @ResponseStatus(CREATED)
-    public Cliente save(@RequestBody Cliente cliente) {
+    public Cliente save(@RequestBody @Valid Cliente cliente) {
         return repository.save(cliente);
     }
 

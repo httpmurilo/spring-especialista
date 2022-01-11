@@ -1,6 +1,7 @@
 package io.murilo.vendas.domain.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 
 @Entity
@@ -10,6 +11,8 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotEmpty(message = "Campo descricao é obrigatorio")
     private String descricao;
     private BigDecimal preco;
 

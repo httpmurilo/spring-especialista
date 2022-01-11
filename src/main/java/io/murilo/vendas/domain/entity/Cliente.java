@@ -1,8 +1,10 @@
 package io.murilo.vendas.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Entity
@@ -12,6 +14,8 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @NotEmpty(message = "Campo nome é obrigatório")
     private String nome;
 
     @JsonIgnore
@@ -60,5 +64,7 @@ public class Cliente {
     }
 
     @Column(name = "cpf", length = 11)
+    @NotEmpty(message = "Campo CPF é obrigatorio")
+    @CPF(message = "informe um CPF válido")
     private String cpf;
 }
