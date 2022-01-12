@@ -2,6 +2,7 @@ package io.murilo.vendas.Dto;
 
 import io.murilo.vendas.validation.NotEmptyList;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -14,8 +15,10 @@ public class PedidoDTO {
         this.items = items;
     }
 
+    @NotNull(message = "{campo.codigo-cliente.obrigatorio}")
     private Integer cliente;
     private BigDecimal total;
+
     @NotEmptyList(message = "Pedido não pode ser realizado sem itens.")
     private List<ItemPedidoDTO> items;
 
@@ -35,7 +38,6 @@ public class PedidoDTO {
         this.total = total;
     }
 
-
     public List<ItemPedidoDTO> getItems() {
         return items;
     }
@@ -43,6 +45,4 @@ public class PedidoDTO {
     public void setItems(List<ItemPedidoDTO> items) {
         this.items = items;
     }
-
-
 }

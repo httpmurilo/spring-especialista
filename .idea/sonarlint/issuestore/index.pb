@@ -43,13 +43,3 @@ i
 9src/main/java/io/murilo/vendas/domain/entity/Produto.java,0/c/0c1d3cb20dee960337f1390e270a47a4c8aaaa8a
 i
 9src/main/java/io/murilo/vendas/domain/entity/Cliente.java,5/1/5122b15eadac850b7cb5c52aa90bc4f1b84828bd
-e
-5src/main/java/io/murilo/vendas/Dto/ItemPedidoDTO.java,7/4/74c8ac4e2602dc82770f9176e45a8c61511be02e
-o
-?src/main/java/io/murilo/vendas/controller/PedidoController.java,2/6/264f7f0aa973cbb40c9eb6e602fed3986f81e779
-t
-Dsrc/main/java/io/murilo/vendas/validation/NotEmptyListValidator.java,1/e/1ebc91e0c78bc511841b1e3d97cc6041f6af2158
-a
-1src/main/java/io/murilo/vendas/Dto/PedidoDTO.java,2/7/27579e934683613baadf6f09defd55ac2a3d11c2
-k
-;src/main/java/io/murilo/vendas/validation/NotEmptyList.java,d/f/df3333edf0c13caf0218cfb957c5d519f1e9fe12
