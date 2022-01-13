@@ -31,8 +31,6 @@ s
 Csrc/main/java/io/murilo/vendas/controller/RestControllerAdvice.java,6/c/6c3d3ac6a4563f054e67aa62b9eb1a88c74a4555
 s
 Csrc/main/java/io/murilo/vendas/services/Impl/PedidoServiceImpl.java,e/8/e886859bd274427c590aa9a6eb5652617b92dbb6
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 p
 @src/main/java/io/murilo/vendas/controller/ClienteController.java,2/0/2021f7ed577e61925849d763a9883d0f326a7eef
 p
