@@ -15,13 +15,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+        auth.inMemoryAuthentication()
+                .passwordEncoder(passwordEncoder())
+                .withUser("teste")
+                .password(passwordEncoder().encode("123"))
+                .roles("USER");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/api/clientes/**")
+                    .hasAnyRole("USER","ADMIN")
+                .antMatchers("/api/produtos/**")
+                    .hasRole("ADMIN")
+                .antMatchers("/api/pedidos/**")
+                    .hasRole("USER")
+                .and()
+                    .httpBasic();
     }
 }
