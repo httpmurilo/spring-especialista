@@ -1,4 +1,5 @@
 io/murilo/vendas/config/SecurityConfig.class
+io/murilo/vendas/controller/UsuarioController.class
 io/murilo/vendas/controller/RestControllerAdvice.class
 io/murilo/vendas/repository/ClienteRepository.class
 io/murilo/vendas/controller/ProdutoController.class
@@ -8,6 +9,7 @@ io/murilo/vendas/Dto/ItemPedidoDTO.class
 io/murilo/vendas/controller/ApiErrors.class
 io/murilo/vendas/domain/entity/ItemPedido.class
 io/murilo/vendas/exceptions/GenericExceptionError.class
+io/murilo/vendas/services/Impl/UsuarioServiceImpl.class
 io/murilo/vendas/validation/NotEmptyListValidator.class
 io/murilo/vendas/domain/entity/Pedido.class
 io/murilo/vendas/controller/PedidoController.class
@@ -23,6 +25,8 @@ io/murilo/vendas/services/PedidoService.class
 io/murilo/vendas/VendasApplication.class
 io/murilo/vendas/services/Impl/PedidoServiceImpl.class
 io/murilo/vendas/domain/entity/Produto.class
+io/murilo/vendas/repository/UsuarioRepository.class
 io/murilo/vendas/exceptions/BadRequestException.class
 io/murilo/vendas/domain/entity/Cliente.class
 io/murilo/vendas/Dto/InformacoesPedidoDTO.class
+io/murilo/vendas/domain/entity/Usuario.class
