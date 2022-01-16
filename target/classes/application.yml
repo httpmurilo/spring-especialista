@@ -5,3 +5,8 @@ server:
 spring:
   profiles:
     active: dev
+
+security:
+  jwt:
+    expiracao: 30
+    chave-assinatura: santos@libertadores

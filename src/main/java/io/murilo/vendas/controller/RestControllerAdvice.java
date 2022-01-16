@@ -1,5 +1,6 @@
 package io.murilo.vendas.controller;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import io.murilo.vendas.exceptions.GenericExceptionError;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -28,6 +29,13 @@ public class RestControllerAdvice {
                                 .map(e -> e.getDefaultMessage())
                                 .collect(Collectors.toList());
 
+        return new ApiErrors(errors);
+    }
+
+    @ExceptionHandler(ExpiredJwtException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiErrors handleMethodExpiredToken(ExpiredJwtException ex) {
+        String errors = ex.getMessage();
         return new ApiErrors(errors);
     }
 

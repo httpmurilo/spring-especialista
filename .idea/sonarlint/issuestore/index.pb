@@ -28,8 +28,6 @@ n
 h
 8src/main/java/io/murilo/vendas/controller/ApiErrors.java,e/7/e77e91063a56a3b2c5f6b349f5c69d356890446e
 s
-Csrc/main/java/io/murilo/vendas/controller/RestControllerAdvice.java,6/c/6c3d3ac6a4563f054e67aa62b9eb1a88c74a4555
-s
 Csrc/main/java/io/murilo/vendas/services/Impl/PedidoServiceImpl.java,e/8/e886859bd274427c590aa9a6eb5652617b92dbb6
 p
 @src/main/java/io/murilo/vendas/controller/ClienteController.java,2/0/2021f7ed577e61925849d763a9883d0f326a7eef
