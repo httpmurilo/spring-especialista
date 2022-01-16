@@ -1,4 +1,5 @@
 io/murilo/vendas/config/SecurityConfig.class
+io/murilo/vendas/Dto/CredenciaisDTO.class
 io/murilo/vendas/controller/UsuarioController.class
 io/murilo/vendas/controller/RestControllerAdvice.class
 io/murilo/vendas/repository/ClienteRepository.class
@@ -7,10 +8,12 @@ io/murilo/vendas/repository/ItensPedidoRepository.class
 io/murilo/vendas/domain/entity/StatusPedido.class
 io/murilo/vendas/Dto/ItemPedidoDTO.class
 io/murilo/vendas/controller/ApiErrors.class
+io/murilo/vendas/filter/JwtAuthFilter.class
 io/murilo/vendas/domain/entity/ItemPedido.class
 io/murilo/vendas/exceptions/GenericExceptionError.class
 io/murilo/vendas/services/Impl/UsuarioServiceImpl.class
 io/murilo/vendas/validation/NotEmptyListValidator.class
+io/murilo/vendas/config/SwaggerConfig.class
 io/murilo/vendas/domain/entity/Pedido.class
 io/murilo/vendas/controller/PedidoController.class
 io/murilo/vendas/repository/PedidoRepository.class
@@ -18,10 +21,13 @@ io/murilo/vendas/validation/NotEmptyList.class
 io/murilo/vendas/Dto/InformacaoItemPedidoDTO.class
 io/murilo/vendas/Dto/AtualizarStatusPedidoDTO.class
 io/murilo/vendas/controller/ClienteController.class
+io/murilo/vendas/services/JwtService.class
 io/murilo/vendas/repository/ProdutoRepository.class
 io/murilo/vendas/config/InternacionalizacaoConfig.class
+io/murilo/vendas/Dto/TokenDTO.class
 io/murilo/vendas/Dto/PedidoDTO.class
 io/murilo/vendas/services/PedidoService.class
+io/murilo/vendas/exceptions/SenhaInvalidaException.class
 io/murilo/vendas/VendasApplication.class
 io/murilo/vendas/services/Impl/PedidoServiceImpl.class
 io/murilo/vendas/domain/entity/Produto.class
