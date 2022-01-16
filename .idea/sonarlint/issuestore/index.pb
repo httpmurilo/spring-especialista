@@ -30,8 +30,6 @@ h
 s
 Csrc/main/java/io/murilo/vendas/services/Impl/PedidoServiceImpl.java,e/8/e886859bd274427c590aa9a6eb5652617b92dbb6
 p
-@src/main/java/io/murilo/vendas/controller/ClienteController.java,2/0/2021f7ed577e61925849d763a9883d0f326a7eef
-p
 @src/main/java/io/murilo/vendas/Dto/AtualizarStatusPedidoDTO.java,0/a/0a539b0b7f66677c333c78b97992a24de49115b7
 j
 :src/main/java/io/murilo/vendas/services/PedidoService.java,6/9/6921c5dd8f084fcb16d4d62ecc268a554983191f

@@ -1,16 +1,0 @@
-
-E
-java:S3740@"/Provide the parametrized type for this generic.(“¢Éì
-V
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(½¬„þ
-E
-java:S2201*"/The return value of "orElseThrow" must be used.(Ã»¥±
-[
-java:S4684/"@Replace this persistent entity with a simple POJO or DTO object.(¯Å®ìùÿÿÿÿ
-h	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÁ­“ÿÿÿÿÿ
-[
-java:S4684:"@Replace this persistent entity with a simple POJO or DTO object.(äÁ­“ÿÿÿÿÿ
-[
-java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ
-n
-java:S1192"XDefine a constant instead of duplicating this literal "Cliente nÃ£o encontrado" 3 times.(Ã»¥±
