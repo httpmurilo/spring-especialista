@@ -1,6 +1,7 @@
 package io.murilo.vendas.services.Impl;
 
 import io.murilo.vendas.domain.entity.Usuario;
+import io.murilo.vendas.exceptions.SenhaInvalidaException;
 import io.murilo.vendas.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -31,4 +32,16 @@ public class UsuarioServiceImpl implements UserDetailsService {
     public Usuario salvar(Usuario usuario) {
         return repository.save(usuario);
     }
+
+    public UserDetails autenticar(Usuario usuario) {
+        UserDetails userDetails = loadUserByUsername(usuario.getLogin());
+        boolean senhasBatem = encoder.matches(usuario.getSenha(), userDetails.getPassword());
+
+        if(senhasBatem) {
+            return userDetails;
+        }
+
+        throw new SenhaInvalidaException();
+    }
+
 }
